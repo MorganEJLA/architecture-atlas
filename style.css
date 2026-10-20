@@ -1,0 +1,36 @@
+/*
+Theme Name: Atlas
+Description: A personal atlas of 8 American architecture movements.
+Version: 0.1.0
+Requires PHP: 8.2
+Text Domain: atlas
+*/
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.screen-reader-text:focus {
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  overflow: visible;
+  clip-path: none;
+  background: #fff;
+  color: #000;
+}
+
+:focus-visible {
+  outline: 3px solid #1a4d8f;
+  outline-offset: 2px;
+}

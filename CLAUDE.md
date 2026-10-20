@@ -1,42 +1,38 @@
 # Architecture Atlas
 
-A personal atlas of 8 American architecture movements, built as a WordPress block theme. This is a learning project for working with AI agents. Keep scope small.
+A personal atlas of 8 American architecture movements, built as a classic PHP WordPress theme. This is a learning project for working with AI agents. Keep scope small.
+
+## How we work
+
+- You can write and edit code, one task at a time. Wait for my approval of each edit.
+- Keep every task small, and stop after each one so I can review.
+- Write classic PHP theme code and explain it in classic WordPress terms.
+- After each task, summarize what you changed in 3 bullets.
+- Explain in classic WordPress terms (header.php, template hierarchy, the Loop).
+- If my code conflicts with best practice, say so and explain why.
 
 ## Stack
-- Block theme with `theme.json` (no classic PHP templates unless I ask)
-- ACF (free) for custom fields
-- React via `@wordpress/scripts` for one feature: a filterable movement timeline using the REST API
+
+- Classic PHP theme, plain CSS in style.css (no theme.json yet)
+- ACF free for custom fields
+- Later: one React feature, built as a custom block
 - Local by Flywheel, PHP 8.2+
 
-## Scope limits (do not exceed)
+## Scope limits
+
 - 3 CPTs: Movement, Building, Architect
 - 1 taxonomy: Place (Southern California, New York, New Orleans, Chicago, New Mexico)
-- 1 React feature
-- 8 movements, 2 buildings each to start
-- No custom illustrations, no extra plugins, no "filming locations" feature
-- Anything else goes in `LATER.md`, not in the code
-
-## Movements
-Spanish Colonial Revival, Craftsman, Mid-Century Modern (Southern California); Pueblo Revival (New Mexico); Beaux-Arts, Art Deco (New York); Creole & Shotgun (New Orleans); Chicago School (Chicago).
-Source data lives in `data/movements.json`.
+- 8 movements: Spanish Colonial Revival, Craftsman, Mid-Century Modern, Pueblo Revival, Beaux-Arts, Art Deco, Creole & Shotgun, Chicago School
+- Anything else goes in LATER.md
 
 ## Coding standards
-- Follow WordPress Coding Standards
-- Escape all output (`esc_html`, `esc_attr`, `esc_url`, `wp_kses_post`)
-- Sanitize and validate all input
-- Prefix functions and hooks with `atlas_`; text domain is `atlas`
-- Enqueue scripts and styles properly, never hardcode them
-- Use `theme.json` for colors, typography, and spacing. No inline styles.
-- Accessible by default (WCAG 2.2 AA): semantic HTML, alt text, visible focus states
+
+- WordPress Coding Standards
+- Escape all output, sanitize all input
+- Prefix functions with atlas\_, text domain is atlas
+- Enqueue styles and scripts, never hardcode them
+- Accessible by default (WCAG 2.2 AA)
 
 ## Images
-- No scraped photos and no show stills. Wikimedia Commons only.
-- Every image needs an ACF field for license and attribution.
 
-## Workflow rules
-- Work only inside this theme folder
-- Plan first. Show the plan and wait for my approval before building.
-- One task per commit, with a clear message. Never commit or push without asking.
-- Explain any non-obvious code. I must be able to explain it back.
-- I choose the color palettes. You implement them.
-- If my request conflicts with these rules or with best practice, say so before doing it.
+- Wikimedia Commons only, with license and attribution stored per image
