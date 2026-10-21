@@ -42,3 +42,26 @@ function atlas_enqueue_styles() {
 	);
 }
 add_action( 'wp_enqueue_scripts', 'atlas_enqueue_styles' );
+
+/**
+ * Order the Movement archive by start_year, oldest first, all on one page.
+ *
+ * @param WP_Query $query The main query.
+ */
+function atlas_order_movement_archive( $query ) {
+	if ( is_admin() || ! $query->is_main_query() || ! $query->is_post_type_archive( 'atlas_movement' ) ) {
+		return;
+	}
+
+	$query->set( 'meta_key', 'start_year' );
+	$query->set(
+	'orderby',
+	array(
+		'meta_value_num' => 'ASC',
+		'title'          => 'ASC',
+	)
+);
+
+	$query->set( 'posts_per_page', -1 );
+}
+add_action( 'pre_get_posts', 'atlas_order_movement_archive' );
