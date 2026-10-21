@@ -11,11 +11,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 require_once get_template_directory() . '/inc/post-types.php';
 require_once get_template_directory() . '/inc/taxonomies.php';
+require_once get_template_directory() . '/inc/acf-fields.php';
 /** Register theme features. */
-require_once get_template_directory() . '/inc/taxonomies.php';
-/**
- * Register theme features.
- */
+
+
 function atlas_setup() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
