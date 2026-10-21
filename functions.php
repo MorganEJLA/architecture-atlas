@@ -12,6 +12,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once get_template_directory() . '/inc/post-types.php';
 require_once get_template_directory() . '/inc/taxonomies.php';
 require_once get_template_directory() . '/inc/acf-fields.php';
+
+if ( defined( 'WP_CLI' ) && WP_CLI ) {
+	require_once get_template_directory() . '/inc/cli-seed.php';
+}
+
 /** Register theme features. */
 
 

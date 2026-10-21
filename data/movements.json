@@ -1,0 +1,90 @@
+[
+  {
+    "title": "Spanish Colonial Revival",
+    "slug": "spanish-colonial-revival",
+    "place": "Southern California",
+    "start_year": 1915,
+    "end_year": 1940,
+    "swatch_1": "#F3E9DC",
+    "swatch_2": "#C65D3B",
+    "swatch_3": "#2E6F8E",
+    "summary": "Stucco walls and red tile roofs drawn from Spanish and Mexican architecture, popularized in California after the 1915 Panama-California Exposition."
+  },
+  {
+    "title": "Craftsman",
+    "slug": "craftsman",
+    "place": "Southern California",
+    "start_year": 1905,
+    "end_year": 1930,
+    "swatch_1": "#5B4636",
+    "swatch_2": "#7A8B4F",
+    "swatch_3": "#D9C7A3",
+    "summary": "Handcrafted-looking homes with low-pitched roofs, wide eaves and exposed beams, tied to the Arts and Crafts movement."
+  },
+  {
+    "title": "Mid-Century Modern",
+    "slug": "mid-century-modern",
+    "place": "Southern California",
+    "start_year": 1945,
+    "end_year": 1969,
+    "swatch_1": "#D2691E",
+    "swatch_2": "#2A7F7F",
+    "swatch_3": "#F4E4C1",
+    "summary": "Postwar design with clean lines, large glass walls and an easy flow between indoors and outdoors."
+  },
+  {
+    "title": "Pueblo Revival",
+    "slug": "pueblo-revival",
+    "place": "New Mexico",
+    "start_year": 1905,
+    "end_year": 1940,
+    "swatch_1": "#C1440E",
+    "swatch_2": "#E4C9A8",
+    "swatch_3": "#7A9E9F",
+    "summary": "Flat roofs, rounded corners and earth-toned stucco modeled on Pueblo and Spanish adobe building traditions."
+  },
+  {
+    "title": "Beaux-Arts",
+    "slug": "beaux-arts",
+    "place": "New York",
+    "start_year": 1880,
+    "end_year": 1930,
+    "swatch_1": "#E8DCC4",
+    "swatch_2": "#8C7853",
+    "swatch_3": "#1F3A5F",
+    "summary": "Grand, symmetrical, classically ornamented public buildings influenced by the \u00c9cole des Beaux-Arts in Paris."
+  },
+  {
+    "title": "Art Deco",
+    "slug": "art-deco",
+    "place": "New York",
+    "start_year": 1925,
+    "end_year": 1940,
+    "swatch_1": "#C9A227",
+    "swatch_2": "#0B1F3A",
+    "swatch_3": "#E8E4D9",
+    "summary": "Geometric ornament, a strong vertical emphasis and metallic accents, seen in the skyscrapers of the 1920s and 1930s."
+  },
+  {
+    "title": "Creole & Shotgun",
+    "slug": "creole-and-shotgun",
+    "place": "New Orleans",
+    "start_year": 1790,
+    "end_year": 1920,
+    "swatch_1": "#2F6B5A",
+    "swatch_2": "#E0A458",
+    "swatch_3": "#C8553D",
+    "summary": "Two New Orleans house types: Creole cottages and townhouses from the French and Spanish colonial eras, and narrow shotgun houses with rooms in a row."
+  },
+  {
+    "title": "Chicago School",
+    "slug": "chicago-school",
+    "place": "Chicago",
+    "start_year": 1880,
+    "end_year": 1910,
+    "swatch_1": "#8C4A32",
+    "swatch_2": "#B7B7B2",
+    "swatch_3": "#2B2D31",
+    "summary": "Early steel-frame commercial buildings with large windows and little ornament, developed in Chicago after the 1871 fire."
+  }
+]
