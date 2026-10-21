@@ -35,7 +35,7 @@ if ( ! $atlas_movements->have_posts() ) {
 	return;
 }
 ?>
-<section <?php echo get_block_wrapper_attributes( array( 'class' => 'atlas-timeline' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped by core. ?> aria-label="<?php esc_attr_e( 'Timeline of movements', 'atlas' ); ?>">
+<section <?php echo get_block_wrapper_attributes( array( 'class' => 'atlas-timeline' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped by core. ?> aria-label="<?php esc_attr_e( 'Timeline of movements', 'atlas' ); ?>" data-movements-url="<?php echo esc_url( add_query_arg( array( 'per_page' => 100, '_fields' => 'id,link,title,acf,atlas_place' ), rest_url( 'wp/v2/atlas_movement' ) ) ); ?>" data-places-url="<?php echo esc_url( add_query_arg( array( 'per_page' => 100, '_fields' => 'id,name,slug' ), rest_url( 'wp/v2/atlas_place' ) ) ); ?>">
 	<ol class="atlas-timeline__list">
 		<?php foreach ( $atlas_movements->posts as $atlas_post ) : ?>
 			<?php

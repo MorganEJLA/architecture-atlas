@@ -49,3 +49,36 @@ Text Domain: atlas
   background-color: var(--swatch);
   border: 1px solid rgb(0 0 0 / 40%);
 }
+
+.atlas-timeline__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+
+.atlas-timeline__filter {
+  padding: 0.5rem 1rem;
+  border: 2px solid #1a4d8f;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #1a4d8f;
+  font: inherit;
+  cursor: pointer;
+}
+
+.atlas-timeline__filter[aria-pressed="true"] {
+  background: #1a4d8f;
+  color: #fff;
+  font-weight: 700;
+}
+
+.atlas-timeline__filter:focus-visible {
+  outline: 3px solid #1a4d8f;
+  outline-offset: 3px;
+}
+
+.atlas-timeline__years,
+.atlas-timeline__place {
+  margin-left: 0.75rem;
+}
