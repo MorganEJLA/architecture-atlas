@@ -52,6 +52,16 @@ if ( ! $atlas_movements->have_posts() ) {
 			} else {
 				$atlas_years = $atlas_start ? $atlas_start : $atlas_end;
 			}
+
+			$atlas_swatches = array();
+			if ( function_exists( 'get_field' ) ) {
+				foreach ( array( 1, 2, 3 ) as $atlas_i ) {
+					$atlas_color = sanitize_hex_color( (string) get_field( 'swatch_' . $atlas_i, $atlas_id ) );
+					if ( $atlas_color ) {
+						$atlas_swatches[ $atlas_i ] = $atlas_color;
+					}
+				}
+			}
 			?>
 			<li class="atlas-timeline__item" data-place="<?php echo esc_attr( $atlas_slugs ); ?>">
 				<a href="<?php echo esc_url( get_permalink( $atlas_id ) ); ?>"><?php echo esc_html( get_the_title( $atlas_id ) ); ?></a>
@@ -60,6 +70,20 @@ if ( ! $atlas_movements->have_posts() ) {
 				<?php endif; ?>
 				<?php if ( $atlas_places ) : ?>
 					<span class="atlas-timeline__place"><?php echo esc_html( $atlas_places ); ?></span>
+				<?php endif; ?>
+				<?php if ( $atlas_swatches ) : ?>
+					<ul class="swatches">
+						<?php foreach ( $atlas_swatches as $atlas_i => $atlas_color ) : ?>
+							<li class="swatch" style="--swatch: <?php echo esc_attr( $atlas_color ); ?>;">
+								<span class="screen-reader-text">
+									<?php
+									/* translators: 1: swatch number, 2: hex color. */
+									echo esc_html( sprintf( __( 'Swatch %1$d: %2$s', 'atlas' ), $atlas_i, $atlas_color ) );
+									?>
+								</span>
+							</li>
+						<?php endforeach; ?>
+					</ul>
 				<?php endif; ?>
 			</li>
 		<?php endforeach; ?>

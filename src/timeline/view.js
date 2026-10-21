@@ -22,6 +22,21 @@ function toYear( value ) {
 	return Number.isNaN( year ) ? null : year;
 }
 
+const HEX_COLOR = /^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/;
+
+function toSwatches( acf ) {
+	return [ 1, 2, 3 ]
+		.map( ( number ) => ( {
+			number,
+			color: acf?.[ `swatch_${ number }` ],
+		} ) )
+		.filter(
+			( swatch ) =>
+				typeof swatch.color === 'string' &&
+				HEX_COLOR.test( swatch.color )
+		);
+}
+
 function prepare( movements ) {
 	return movements
 		.map( ( movement ) => ( {
@@ -31,6 +46,7 @@ function prepare( movements ) {
 			start: toYear( movement.acf?.start_year ),
 			end: toYear( movement.acf?.end_year ),
 			placeIds: movement.atlas_place || [],
+			swatches: toSwatches( movement.acf ),
 		} ) )
 		.sort( ( a, b ) => {
 			if ( a.start !== b.start ) {
@@ -132,6 +148,29 @@ function Timeline( { movements, places } ) {
 									{ placeList }
 								</span>
 							) }
+							{ movement.swatches.length > 0 && (
+								<ul className="swatches">
+									{ movement.swatches.map( ( swatch ) => (
+										<li
+											key={ swatch.number }
+											className="swatch"
+											style={ { '--swatch': swatch.color } }
+										>
+											<span className="screen-reader-text">
+												{ sprintf(
+													/* translators: 1: swatch number, 2: hex color. */
+													__(
+														'Swatch %1$d: %2$s',
+														'atlas'
+													),
+													swatch.number,
+													swatch.color
+												) }
+											</span>
+										</li>
+									) ) }
+								</ul>
+							) }
 						</li>
 					);
 				} ) }
@@ -158,9 +197,11 @@ function init( section ) {
 			);
 			fallback.replaceWith( mount );
 		} )
-		.catch( () => {
-			// Leave the PHP-rendered list in place.
-		} );
+		.catch( ( error ) => {
+	// eslint-disable-next-line no-console
+	console.error( 'atlas/timeline:', error );
+	// The PHP-rendered list stays in place.
+} );
 }
 
 document.querySelectorAll( '.atlas-timeline' ).forEach( init );
