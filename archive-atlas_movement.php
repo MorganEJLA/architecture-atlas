@@ -14,6 +14,8 @@ get_header();
 <main id="content" class="site-main">
 	<h1><?php post_type_archive_title(); ?></h1>
 
+	<?php echo do_blocks( '<!-- wp:atlas/timeline /-->' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Block markup is escaped in render.php. ?>
+
 	<?php if ( have_posts() ) : ?>
 		<?php
 		while ( have_posts() ) :

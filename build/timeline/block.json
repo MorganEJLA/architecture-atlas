@@ -7,5 +7,6 @@
   "description": "A timeline of American architecture movements.",
   "textdomain": "atlas",
   "editorScript": "file:./index.js",
-  "viewScript": "file:./view.js"
+  "viewScript": "file:./view.js",
+  "render": "file:./render.php"
 }
