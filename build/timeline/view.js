@@ -1,0 +1,1 @@
+console.log("atlas/timeline view script loaded");

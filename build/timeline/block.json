@@ -1,0 +1,11 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "atlas/timeline",
+  "title": "Timeline",
+  "category": "widgets",
+  "description": "A timeline of American architecture movements.",
+  "textdomain": "atlas",
+  "editorScript": "file:./index.js",
+  "viewScript": "file:./view.js"
+}

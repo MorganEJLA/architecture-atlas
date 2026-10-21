@@ -1,0 +1,13 @@
+{
+	"name": "atlas",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Custom blocks for the Atlas theme.",
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^35.0.0"
+	}
+}

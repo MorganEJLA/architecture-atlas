@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=window.wp.blocks,i=window.wp.blockEditor,l=window.wp.i18n,n=JSON.parse('{"UU":"atlas/timeline"}'),o=window.ReactJSXRuntime;(0,e.registerBlockType)(n.UU,{edit:function(){return(0,o.jsx)("p",{...(0,i.useBlockProps)(),children:(0,l.__)("Timeline block (placeholder)","atlas")})},save:()=>null})})();
