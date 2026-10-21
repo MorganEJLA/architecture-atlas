@@ -47,7 +47,7 @@ add_action( 'init', 'atlas_register_place_taxonomy' );
  * than after_switch_theme, because the theme is already active. A version
  * option records that seeding is done, so most requests cost one cached
  * option read. term_exists() keeps repeat runs from creating duplicates.
-  * Change $seed_version to re-seed after editing the list.
+ * Change $seed_version to re-seed after editing the list.
  */
 function atlas_seed_place_terms() {
 	$seed_version = '1';
@@ -64,14 +64,14 @@ function atlas_seed_place_terms() {
 		'New Mexico',
 	);
 
-	foreach ( $places as $place ) {
-	if ( ! term_exists( $place, 'atlas_place' ) ) {
-		$result = wp_insert_term( $place, 'atlas_place' );
-		if ( is_wp_error( $result ) ) {
-			return;
+		foreach ( $places as $place ) {
+		if ( ! term_exists( $place, 'atlas_place' ) ) {
+			$result = wp_insert_term( $place, 'atlas_place' );
+			if ( is_wp_error( $result ) ) {
+				return;
+			}
 		}
 	}
-}
 
 	update_option( 'atlas_places_seeded', $seed_version );
 }

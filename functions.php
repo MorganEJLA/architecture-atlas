@@ -10,6 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once get_template_directory() . '/inc/post-types.php';
+require_once get_template_directory() . '/inc/taxonomies.php';
 /** Register theme features. */
 require_once get_template_directory() . '/inc/taxonomies.php';
 /**
